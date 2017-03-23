@@ -2,7 +2,7 @@
 title: Bob Chen
 subtitle: 教练，我想打篮球
 welcome_message:
-description: 我的爱好系篮球，桌球.
+description: 一个爱编程的篮球/桌球运动员
 creator: <a href="https://bobchen3377.github.io">@bobchen3377</a>
 
 url: "https://bobchen3377.github.io"
@@ -13,7 +13,7 @@ permalink: /:year/:month/:title/
 highlighter: rouge
 
 # supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
-cover_color: red
+cover_color: blue
 
 # The blog button should not be removed.
 blog_button:
@@ -22,7 +22,7 @@ blog_button:
 
 # Navigation buttons in the front page.
 nav:
-    - {title: Projects, description: My Projects, url: 'http://project.onevcat.com'}
+    # - {title: Projects, description: My Projects, url: 'http://project.onevcat.com'}
     # - {title: Another Button, description: A button, url: 'http://example.com'}
 
 # Pagination
@@ -37,11 +37,11 @@ comment:
     
 # Social
 social:
-    weibo: onevcat
-    github: onevcat
-    twitter: onevcat
+    weibo: bobchen3377
+    github: bobchen3377
+    twitter: bobchen3377
     gplus: 107108267983477358170
-    mail: onev@onevcat.com
+    mail: 173077263@qq.com
 
 # Google Analytics
 ga:
