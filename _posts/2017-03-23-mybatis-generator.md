@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Mybatis Generator - Mapper, Pojo auto-generation
+title: Mybatis Generator - Mapper, Pojo Auto-Generation
 date: 2017-03-23
 category: Mybatis
 ---

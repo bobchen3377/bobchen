@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Nginx + Vsftpd construct static resource server
+title: Nginx + Vsftpd Construct Static Resource Server
 date: 2017-01-10
 category: Nginx
 ---
