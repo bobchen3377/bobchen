@@ -12,12 +12,12 @@ Mybatis属于半自动的ORM(Object Relational Mapping)， 而在为对应的数
 
 ### 1. Download Jars  
 
-#### 1.1) Download mybatis-generator-core-1.3.5.jar
+#### **1.1) Download mybatis-generator-core-1.3.5.jar**
 
 Link: <a href="http://repo1.maven.org/maven2/org/mybatis/generator/mybatis-generator-core/"  target="_blank">
 http://repo1.maven.org/maven2/org/mybatis/generator/mybatis-generator-core/</a>  
 
-#### 1.2) Download mysql-connector-java-5.1.39.jar
+#### **1.2) Download mysql-connector-java-5.1.39.jar**
 
 Link: <a href="http://repo1.maven.org/maven2/mysql/mysql-connector-java/" target="_blank">
 http://repo1.maven.org/maven2/mysql/mysql-connector-java/</a> 
@@ -25,7 +25,8 @@ http://repo1.maven.org/maven2/mysql/mysql-connector-java/</a>
 ---
 
 ### 2. Setup Xml  
-#### 2.1) 创建一个 *generator.xml*
+#### **2.1) 创建 generator.xml**
+所有jar和文件都放在 `C:\Users\Bob\Desktop\Test\Mybatis_Test` 目录下
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
@@ -64,6 +65,8 @@ http://repo1.maven.org/maven2/mysql/mysql-connector-java/</a>
 	</context>
 </generatorConfiguration>
 ```
+* **要注意修改路径 C:\Users\Bob\Desktop\Test\Mybatis_Test**
+
 * **这是测试数据库mybatistest的表**
 ```
 CREATE TABLE `students` (
@@ -85,9 +88,7 @@ CREATE TABLE `teachers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
 
-* **要注意修改路径 C:\Users\Bob\Desktop\Test\Mybatis_Test**
-
-#### 2.2) 在 `C:\Users\Bob\Desktop\Test\Mybatis_Test` 下创建src文件夹
+#### **2.2) 在 `C:\Users\Bob\Desktop\Test\Mybatis_Test` 下创建src文件夹**
 
 * **完成以上后， 路径下应该包括这些：**
 <img src="\assets\images\mybatis-generator\mybatis-generator-1.png" width="800" />

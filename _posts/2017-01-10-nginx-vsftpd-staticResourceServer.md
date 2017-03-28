@@ -19,7 +19,7 @@ Nginx: nginx-1.8.0.tar.gz or nginx-1.8.1.tar.gz (现在最新的stable version�
 
 在官网Download：<a href="http://www.nginx.org/" target="_blank">www.nginx.org</a>
 
-用SecureCRT的SFTP把*nginx-1.8.0.tar.gz*上传到linux上。
+用**SecureCRT**的**SFTP**功能把 *nginx-1.8.0.tar.gz* 上传到linux虚拟机上。
 
 #### **1.2) Install Nginx**
 
@@ -61,7 +61,7 @@ cd nginx-1.8.0
 --http-scgi-temp-path=/var/temp/nginx/scgi
 ```
 * 注意上面的/var/temp/nginx目录需要在执行命令前手动创建 `mkdir /var/temp/nginx -p`
-* 执行成功后， 在目录下将会有*Makefile*文件
+* 执行成功后， 在目录下将会增加了 *Makefile* 文件
 
 然后编译安装：
 ```
@@ -98,9 +98,9 @@ root     16186  0.0  0.1   4360   712 pts/0    S+   09:42   0:00 grep nginx
 ```
 
 另外还有以下常用命令：
-* 完整停止：./nginx -s quit （建议使用）
-* 快速停止：./nginx -s stop
-* 重启（重新加载配置文件）：./nginx -s reload
+* 完整停止：`./nginx -s quit` （建议使用）
+* 快速停止：`./nginx -s stop`
+* 重启（重新加载配置文件）：`./nginx -s reload`
 
 最后关闭linux防火墙：
 ```
@@ -131,7 +131,8 @@ iptables: Unloading modules:                               [  OK  ]
 COMMIT
 # Completed
 ```
-然后重启防火墙：
+
+修改并保存后重启防火墙：
 ```
 [root@bob nginx]# service iptables restart
 iptables: Flushing firewall rules:                         [  OK  ]
@@ -143,7 +144,7 @@ iptables: Applying firewall rules:                         [  OK  ]
 访问nginx服务：
 <img src="\assets\images\nginx-vsftpd-staticResourceServer/nginx-vsftpd-staticResourceServer-1.png" width="800" />
 
-安装成功！
+**Nginx**安装配置成功！
 
 ---
 
@@ -170,8 +171,8 @@ tcp_wrappers=YES
 pasv_min_port=30000
 pasv_max_port=30999
 ```
-修改后重启vsftpd服务：`service vsftpd restart`
-
+修改后重启vsftpd服务：`service vsftpd restart`  
+* 其他命令：开启服务 -> `service vsftpd start`，停止服务 -> `service vsftpd stop`
 
 因为ftp默认的主动模式端口为21，所以要开启防火墙21端口以及被动模式的30000~30999端口：  
 在 `/etc/sysconfig/iptables` 加入  
@@ -210,6 +211,19 @@ iptables: Applying firewall rules:                         [  OK  ]
 ```
 
 访问ftp服务：
+vsftpd的默认根目录是 `/var/ftp/`
+```
+[root@bob ~]# cd /var/ftp/
+[root@bob ftp]# ll
+total 4
+drwxr-xr-x. 2 root root 4096 May 11  2016 pub
+```
 <img src="\assets\images\nginx-vsftpd-staticResourceServer/nginx-vsftpd-staticResourceServer-2.png" width="800" />
 
-安装配置成功！
+**Vsftpd**安装配置成功！
+
+---
+
+### 3. Integrate Nginx and Vsftpd
+用vsftpd构建好的ftp服务器只能通过ftp协议进行访问。但是未来为了让其他服务能够访问ftp图片服务器，例如上传图片， 就需要通过http进行访问。 那么可以让nginx的根目录指向ftp上传文件的目录。
+

@@ -16,7 +16,7 @@ Maven: 3.3.9
 
 ### 1. Create Project  
 
-#### 1.1) Create a Maven Projet
+#### **1.1) Create a Maven Projet**
 
 * File -> New -> Other -> Maven -> Maven Project -> Create a simple project(skip archetype selection) -> Next
 <img src="\assets\images\mybatis-spring-springmvc-integration\mybatis-spring-springmvc-integration-1.png" width="800" />
@@ -35,9 +35,9 @@ Maven: 3.3.9
 
 项目新建完成。
 
-#### 1.2) Import Mapper and Pojo
+#### **1.2) Import Mapper and Pojo**
 
-导入用Link: <a href="/2017/03/mybatis-generator/" target="_blank">Mybatis-Generator</a>生成的Mapper和Pojo
+导入用 <a href="/2017/03/mybatis-generator/" target="_blank">Mybatis-Generator</a> 生成的Mapper和Pojo
 <img src="\assets\images\mybatis-spring-springmvc-integration\mybatis-spring-springmvc-integration-6.png" width="800" />
 
 会有错误，先不管，因为还没有添加SSM的依赖。
@@ -45,7 +45,7 @@ Maven: 3.3.9
 ---
 
 ### 2. SSM Integration  
-#### 2.1) Add Dependencies in POM  
+#### **2.1) Add Dependencies in POM** 
 
 pom.xml
 ```
@@ -235,12 +235,12 @@ pom.xml
 
 #### **2.2) SSM配置文件**
 
-在`src/main/resouces`下建立以下文件：  
-*　resource/db.properties  
-*　spring/applicationContext-dao.xml  
-*　spring/applicationContext-service.xml  
- *　spring/applicationContext-trans.xml  
-*　spring/springmvc.xml
+在`src/main/resouces`下建立以下文件：
+* resource/db.properties  
+* spring/applicationContext-dao.xml  
+* spring/applicationContext-service.xml  
+* spring/applicationContext-trans.xml  
+* spring/springmvc.xml
 
 **resource/db.properties**
 ```
@@ -369,7 +369,7 @@ jdbc.password=password
 </beans>
 ```
 
-#### 2.3) 配置web.xml
+#### **2.3) 配置web.xml**
 **web.xml**
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -431,7 +431,7 @@ jdbc.password=password
 ---
 
 ### 3. Test  
-#### 3.1) Service, Controller, JSP
+#### **3.1) Service, Controller, JSP**
 创建以下文件：
 * src/main/java/com.mybatis.service/StudentService.java
 * src/main/java/com.mybatis.service/StudentServiceImpl.java
@@ -492,8 +492,7 @@ public class StudentController {
 </body>
 ```
 
-
-#### 3.2) 使用tomcat7-maven-plugin运行
+#### **3.2) 使用tomcat7-maven-plugin运行**
 `右键project -> Run As -> Maven build -> Goals`  
 输入 `clean tomcat7:run`  
 然后Run。
@@ -503,3 +502,4 @@ public class StudentController {
 
 在浏览器输入 `http://localhost:8888/studentController/showStudent/2010001` , 成功得到页面：
 <img src="\assets\images\mybatis-spring-springmvc-integration\mybatis-spring-springmvc-integration-8.png" width="400" />
+证明SSM整合成功！
