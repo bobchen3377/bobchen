@@ -7,7 +7,7 @@ category: Maven
 
 所有的Maven Plugins可参考地址：<a href="http://maven.apache.org/plugins/index.html" target="_blank">http://maven.apache.org/plugins/index.html</a>  
 
-### maven-resources-plugin  
+### **maven-resources-plugin**
 Introduction: <a href="http://maven.apache.org/plugins/maven-resources-plugin/" target="_blank">http://maven.apache.org/plugins/maven-resources-plugin/</a>
 
 为了使项目结构更为清晰，Maven区别对待Java代码文件和资源文件，maven-compiler-plugin用来编译Java代码，**maven-resources-plugin**则用来处理资源文件。  
@@ -33,7 +33,7 @@ Introduction: <a href="http://maven.apache.org/plugins/maven-resources-plugin/" 
 
 ---
 
-### maven-compiler-plugin  
+### **maven-compiler-plugin** 
 Introduction: <a href="http://maven.apache.org/plugins/maven-compiler-plugin/" target="_blank">http://maven.apache.org/plugins/maven-compiler-plugin/</a>
 
 为了使项目结构更为清晰，Maven区别对待Java代码文件和资源文件，**maven-compiler-plugin**用来编译Java代码，**maven-resources-plugin**则用来处理资源文件。
@@ -58,7 +58,7 @@ Introduction: <a href="http://maven.apache.org/plugins/maven-compiler-plugin/" t
 
 ---
 
-### tomcat7-maven-plugin  
+### **tomcat7-maven-plugin**  
 Introduction: <a href="http://tomcat.apache.org/maven-plugin.html" target="_blank">http://tomcat.apache.org/maven-plugin.html</a>
 
 **tomcat7-maven-plugin**可以让Maven Web项目的WAR包部署到Tomcat上的Servlet Container变得更加方便.
@@ -99,7 +99,7 @@ Introduction: <a href="http://tomcat.apache.org/maven-plugin.html" target="_blan
 	</plugins>
 </build>
 ```  
-当然, 在ip为`192.168.1.107`的Linux虚拟机上, 需要配置Tomcat并运行在8080端口:  
+当然, 在ip为 *192.168.1.107* 的Linux虚拟机上, 需要配置Tomcat并运行在8080端口:  
 `vim /usr/local/tomcat1/conf/tomcat-users.xml`, 找到 `<tomcat-users></tomcat-users>` 属性, 在里面加入以下配置:  
 ```
 <tomcat-users>

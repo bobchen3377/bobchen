@@ -1,16 +1,24 @@
 ---
 layout: post
-title: Mybatis Generator. For Mapper, Pojo auto-generation.
+title: Mybatis Generator - Mapper, Pojo auto-generation
 date: 2017-03-23
 category: Mybatis
 ---
 
-### 1. Download Jars
+### 序言
 
-#### 1.1) Download *mybatis-generator-core-1.3.5.jar*
-Link: <a href="http://repo1.maven.org/maven2/org/mybatis/generator/mybatis-generator-core/" target="_blank">http://repo1.maven.org/maven2/org/mybatis/generator/mybatis-generator-core/</a>  
+Mybatis属于半自动的ORM(Object Relational Mapping)， 而在为对应的数据库手动创建Mapper、Pojo需要不小的工作量，而且容易出错。
+因此， 我们有必要使用Mybatis-Generator来帮助我们实现Mapper, Pojo auto-generation。
 
-#### 1.2) Download *mysql-connector-java-5.1.39.jar*
+### 1. Download Jars  
+
+#### 1.1) Download mybatis-generator-core-1.3.5.jar
+
+Link: <a href="http://repo1.maven.org/maven2/org/mybatis/generator/mybatis-generator-core/"  target="_blank">
+http://repo1.maven.org/maven2/org/mybatis/generator/mybatis-generator-core/</a>  
+
+#### 1.2) Download mysql-connector-java-5.1.39.jar
+
 Link: <a href="http://repo1.maven.org/maven2/mysql/mysql-connector-java/" target="_blank">
 http://repo1.maven.org/maven2/mysql/mysql-connector-java/</a> 
 
