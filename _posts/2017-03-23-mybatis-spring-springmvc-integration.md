@@ -21,7 +21,7 @@ Maven: 3.3.9
 * File -> New -> Other -> Maven -> Maven Project -> Create a simple project(skip archetype selection) -> Next
 <img src="\assets\images\mybatis-spring-springmvc-integration\mybatis-spring-springmvc-integration-1.png" width="800" />
 
-* Input GroupId and ArtifactId -> select'war'-> Finish.
+* Input GroupId and ArtifactId -> select 'war' -> Finish.
 <img src="\assets\images\mybatis-spring-springmvc-integration\mybatis-spring-springmvc-integration-2.png" width="800" />
 
 * 新建的Project如下

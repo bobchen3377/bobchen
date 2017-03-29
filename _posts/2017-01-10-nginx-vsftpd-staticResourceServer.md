@@ -225,5 +225,43 @@ drwxr-xr-x. 2 root root 4096 May 11  2016 pub
 ---
 
 ### 3. Integrate Nginx and Vsftpd
-用vsftpd构建好的ftp服务器只能通过ftp协议进行访问。但是未来为了让其他服务能够访问ftp图片服务器，例如上传图片， 就需要通过http进行访问。 那么可以让nginx的根目录指向ftp上传文件的目录。
+用vsftpd构建好的ftp服务器只能通过ftp协议进行访问。但是未来为了让其他服务能够访问ftp图片服务器，例如上传图片， 就需要通过http协议进行访问。 那么可以让nginx的根目录指向ftp上传文件的目录。
 
+先在ftpuser下面创建图片文件夹：
+`[root@bob ~]# mkdir -p /home/ftpuser/www/image`
+
+然后修改nginx的配置文件nginx.conf，让根目录指向 `/home/ftpuser/www/image` :  
+```
+[root@bob ~]# vim /usr/local/nginx/conf/nginx.conf
+
+    server {
+        listen       80;
+        server_name  localhost;
+
+        #charset koi8-r;
+
+        #access_log  logs/host.access.log  main;
+
+        location / {
+            #Update below line
+            root   /home/ftpuser/www/image;
+            index  index.html index.htm;
+        }
+```
+
+修改保存后重新加载conf:
+`[root@bob ~]# /usr/local/nginx/sbin/nginx -s reload`
+
+用 SecureCRT 的 SFTP 上传一张图片 *me.jpg* 上去 `/home/ftpuser/www/image/`。
+
+然后用浏览器访问 `http://192.168.1.106/me.jpg`，发现访问失败：
+<img src="\assets\images\nginx-vsftpd-staticResourceServer/nginx-vsftpd-staticResourceServer-3.png" width="800" />
+
+为什么呢？ 因为没有对ftpuser的执行权限：  
+`d-w-------. 5 ftpuser ftpuser  4096 Mar 29 11:49 ftpuser`
+
+那么加上对于 ftpuser 的x执行权限给所有用户：  
+`[root@bob home]# chmod a+x ftpuser`
+
+再访问，成功：
+<img src="\assets\images\nginx-vsftpd-staticResourceServer/nginx-vsftpd-staticResourceServer-4.png" width="800" />
